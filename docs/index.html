@@ -29,7 +29,10 @@ description: "A tiny script to extract the end-of-chapter fastbook questions to 
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This file will become your README and also the index of your documentation.</p>
+<p>This script extracts the end of chapter questionnaires from each of the chapter notebooks and puts them into their own notebooks with additional markdown cells where answers can be written. Also nothing stopping you importing and creating code cells as part of your answers.</p>
+<p>My suggestion is you clone the <a href="https://github.com/fastai/fastbook">fastbook repo</a> and run the script there to make your own copy for private use.</p>
+<p>The questions clearly remain copyright of Jeremy Howard and Sylvain Gugger. Please remember that the fastbook text (including all markdown cells in the notebooks and other prose) is not licensed for any redistribution or change of format or medium, other than making copies of the notebooks or forking this repo for your own private use. No commercial or broadcast use is allowed.</p>
+<p>This script was produced using <a href="https://github.com/fastai/nbdev">nbdev</a>.</p>
 
 </div>
 </div>
@@ -42,7 +45,8 @@ description: "A tiny script to extract the end-of-chapter fastbook questions to 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>pip install git+fastbook_questions</code></p>
+
+<pre><code>pip install fastbook_questions</code></pre>
 
 </div>
 </div>
@@ -56,14 +60,35 @@ description: "A tiny script to extract the end-of-chapter fastbook questions to 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Call <code>fastbook_extract</code> from the command line to extract all the questions to their own notebooks with cells for your answers.</p>
+<p>With no arguments it will look for the fastbook chapters and produce outputs in the current directory.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Optional Arguments:</p>
-<p><code>fastbook_extract src_path dst_path collate</code></p>
+<h3 id="Optional-Arguments">Optional Arguments<a class="anchor-link" href="#Optional-Arguments"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Use arguments to control where to look for inputs and put the outputs.</p>
+
+<pre><code>usage: fastbook_extract [-h] [--path PATH] [--save_path SAVE_PATH]
+                        [--xtra XTRA]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --path PATH           Path to book notebooks (default is current directory)
+                        (default: None)
+  --save_path SAVE_PATH
+                        Path for saving output (default is current directory)
+                        (default: None)</code></pre>
+<p>For example:</p>
+
+<pre><code>    fastbook_extract --path ~/fastbook --save_path ./fbq</code></pre>
+<p>Will look for the fastbook chapters in ~/fastbook and save the output to a directory called fbq (which will be created if it doesn't exist).</p>
 
 </div>
 </div>
