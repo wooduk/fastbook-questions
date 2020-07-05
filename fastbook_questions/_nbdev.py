@@ -9,6 +9,6 @@ modules = ["cli.py"]
 
 doc_url = "https://wooduk.github.io/fastbook_questions/"
 
-git_url = "https://github.com/wooduk/fastbook_questions/tree/master/"
+git_url = "https://github.com/wooduk/fastbook-questions/tree/master/"
 
 def custom_doc_links(name): return None

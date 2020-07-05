@@ -3,7 +3,7 @@
 __all__ = ['NB_VERSION', 'extract']
 
 # Cell
-import glob, re
+import glob, re, os
 import nbformat as nbf
 from pathlib import Path
 from fastscript import call_parse,Param
